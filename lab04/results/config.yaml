@@ -1,0 +1,25 @@
+baseline_metrics:
+  with_derived:
+    accuracy: 0.8585
+    f1: 0.6712
+  without_derived:
+    accuracy: 0.8559
+    f1: 0.6658
+dataset:
+  name: UCI Adult Census
+  openml_version: 2
+  processed_sha256: 16c15d72d4ab8d7453a884edb90dccbdb8344d9da918ed9d18359b6c8490a04d
+  raw_columns: 15
+  raw_rows: 48842
+pipeline:
+  derived_features:
+  - capital_net
+  - hours_per_age
+  imputation:
+    categorical: mode
+    numeric: median
+  missing_symbol: '?'
+  outlier_clipping: 1st and 99th percentiles (train-fitted)
+  random_seed: 42
+  stratified: true
+  test_split_ratio: 0.3
